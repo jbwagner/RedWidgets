@@ -1,8 +1,6 @@
 <?php
 /**
- * WordPress Widget Boilerplate
- *
- * The WordPress Widget Boilerplate is an organized, maintainable boilerplate for building widgets using WordPress best practices.
+ * RedWidgets
  *
  * @package   RedWidgets
  * @author    COCG
@@ -34,9 +32,6 @@ class Red_Widgets {
 	 * Instatiates the plugin itself and the widgets.
 	 */
 	public function __construct() {
-
-		// load plugin text domain
-		add_action( 'init', array( $this, 'cocg_textdomain' ) );
 
 		// Hooks fired when the Widget is activated and deactivated
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
