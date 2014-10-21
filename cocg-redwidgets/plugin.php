@@ -42,8 +42,25 @@ class Red_Widgets {
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 		
+		// Set up the array of widgets currently needed. Comment out anything unneeded.
+		$widgets = array(
+                  'Red_Widgets_Callout' => 'callout/callout.php',
+                  //'Red_Widgets_Testimonials' => 'testimonials/testimonials.php',
+                );
+    
+    foreach ( $widgets as $class => $filepath ) {
+      
+      if ( isset($class) && isset($filepath) ) {
+        
+        include_once( plugin_dir_path( __FILE__ ) . $filepath );
+        add_action( 'widgets_init', create_function( '', 'register_widget("'.$class.'");' ) );
+        
+      }
+      
+    }
+		
 		// Instatiate all widgets
-		add_action( 'widgets_init', create_function( '', 'register_widget("Red_Widgets_Callout");' ) );
+		
 
 	} // end constructor
 

@@ -12,6 +12,7 @@ if ( ! defined ( 'ABSPATH' ) ) {
 
 // TODO: change 'Red_Widgets_Callout' to the name of your widget
 class Red_Widgets_Callout extends WP_Widget {
+    //TODO: Remember to add 'Red_Widgets_Callout' => filepath/filename.php to the $widgets array in the main plugins.php
 
     /**
      * @TODO - Rename "red-widgets-callout" to the name your your widget
@@ -219,6 +220,3 @@ class Red_Widgets_Callout extends WP_Widget {
 
 } // end class
 
-// TODO: Remember to change 'Red_Widgets_Callout' to match the class name definition
-// TODO: Copy the line below (uncommented) to the main plugin.php after the name is updated
-//add_action( 'widgets_init', create_function( '', 'register_widget("Red_Widgets_Callout");' ) );
